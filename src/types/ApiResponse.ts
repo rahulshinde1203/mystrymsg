@@ -4,4 +4,5 @@ export interface ApiRespone{
     message: string;
     isAcceptingMessages?: boolean
     messages?: Array<Message>
+    
 }

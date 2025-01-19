@@ -13,7 +13,7 @@ export const authOption: NextAuthOptions = {
                 email:{ label: "Email", type: 'text',},
                 password:{ label: "Password", type: 'password'}
             },
-            async authorize(credentials: any):Promise<any>{
+            async authorize(credentials: any): Promise<any>{
                 await dbConnect()
                 try {
                     const user = await UserModel.findOne({
@@ -34,8 +34,8 @@ export const authOption: NextAuthOptions = {
                     }else{
                         throw new Error ('Incorrect Password')
                     }
-                } catch (error: any) {
-                    throw new Error(error)
+                } catch (err: any) {
+                    throw new Error(err)
                 }
             }
         })
