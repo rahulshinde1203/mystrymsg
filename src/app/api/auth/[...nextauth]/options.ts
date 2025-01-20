@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
@@ -34,6 +35,7 @@ export const authOption: NextAuthOptions = {
                     }else{
                         throw new Error ('Incorrect Password')
                     }
+                 
                 } catch (err: any) {
                     throw new Error(err)
                 }
